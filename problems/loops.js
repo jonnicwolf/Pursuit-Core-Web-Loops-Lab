@@ -4,7 +4,18 @@
  * @param {number}
  * @returns {number[]}
  */
-function oneTillDoneWhileLoop() {}
+
+function oneTillDoneWhileLoop(n) {
+  let a = 1
+  let newArr = []
+  while (a <= n){
+    newArr.push(a)
+    a++
+  }
+  return newArr 
+}
+
+
 
 /**
  * Takes in a number and returns an array filled with all numbers from 1 to given number (inclusive).
@@ -12,7 +23,14 @@ function oneTillDoneWhileLoop() {}
  * @param {number}
  * @returns {number[]}
  */
-function oneTillDoneForLoop() {}
+
+function oneTillDoneForLoop(number) {
+  let newArr = []
+  for (let i = 1; i <= number; i++){
+    newArr.push(i)
+   }
+   return newArr
+}
 
 /**
  * Takes in a number and returns an array filled with all numbers from number to 0 (exclusive)
@@ -20,7 +38,17 @@ function oneTillDoneForLoop() {}
  * @param {number}
  * @returns {number[]}
  */
-function doneToZeroWhileLoop() {}
+function doneToZeroWhileLoop(x) {
+  let num = []
+  let i = x
+  while(i > 0){
+    num.push(i)
+    i--
+  }
+  return num
+}
+console.log(doneToZeroWhileLoop(10))
+
 
 /**
  * Takes in a number and returns an array filled with all numbers from number to 0 (exclusive)
@@ -28,7 +56,15 @@ function doneToZeroWhileLoop() {}
  * @param {number}
  * @returns {number[]}
  */
-function doneToZeroForLoop() {}
+function doneToZeroForLoop(x) {
+  let neuArr = []
+  for (let i = x; i > 0; i--){
+    neuArr.push(i)
+  }
+  return neuArr
+}
+console.log(doneToZeroForLoop(10))
+
 
 /**
  * Takes in the variable "max", and iterates over all numbers from 0 to "max".
@@ -50,9 +86,10 @@ function evenAndOddWhileLoop() {}
  * @param {number} max number
  * @returns {string[]} ["0 is even", "1 is odd", "2 is even", "3 is odd"] if max was 3
  */
-function evenAndOddForLoop() {}
+function evenAndOddForLoop(max)
 
 /**
+ * 
  * Takes in the variable "x", and iterates over all numbers from 0 to "x".
  *  For each iteration, it will multiply the current number by 9 and store the result in an array.
  * Must be done using a while loop
