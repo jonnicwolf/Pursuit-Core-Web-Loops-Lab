@@ -74,7 +74,14 @@ function findSecondSmallest() {}
  * @returns {number} second largest value
  */
 
-function findSecondLargest() {}
+function findSecondLargest(num) {
+  //create a variable to track the second largest value
+  for (let i = 0; i < num.length; i++){
+    if (num[i] === ) {
+      
+    }
+  }
+}
 
 /**
  * Takes in array and returns an array with all the values but with no duplicates.
