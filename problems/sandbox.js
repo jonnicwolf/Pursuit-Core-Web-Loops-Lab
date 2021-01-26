@@ -1,10 +1,15 @@
-function oneTillDoneWhileLoop(number) {
-    let done = ''
-    let i = 1;
-    while (i <= number) {
-      done += i;
-      i++;
-    }
-    return done.split('');
+function rangeSum(max, min) {
+  let num = [];
+  for (let i = min; i <= max; i++) {
+    num.push(i)
   }
-  console.log(oneTillDoneWhileLoop(20))
+  
+  let numSum = num.reduce((acc, cVal) => {
+    return acc + cVal;
+  })
+  return numSum
+}
+console.log(rangeSum(10,1))
+
+
+

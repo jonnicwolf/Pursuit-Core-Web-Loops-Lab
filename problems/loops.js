@@ -213,6 +213,7 @@ function endsWithFiveForLoop(max) {
   }
   return array
 }
+
 // function endsWithFiveForLoop(max) {
 //   let array = [];
 //   for (let count = 5; count <= max; count+=10){
@@ -255,12 +256,17 @@ while (i > 3) {
 
  */
 function fizzBuzzPart1(max) {
-  for (let x = 0; x <= max; x++) {
-    if (x % 1 === 0) {
-      array.push(x).map(buzz())
+  array = [];
+  for (let i = 0; i <= max; i++){
+    array.push(i)
+    console.log(array)
+    if (i % 3 === 0) {
+      array.splice(i,1,'Fizz')
+    } else if (i % 5 === 0 && i % 3 !== 0) {
+      array.splice(i,1,'Buzz')
     }
   }
-  return array
+  return array;
 }
 console.log(fizzBuzzPart1(100))
 
@@ -274,7 +280,21 @@ console.log(fizzBuzzPart1(100))
  * @returns {Array}
 
  */
-function fizzBuzzPart2() {}
+function fizzBuzzPart2(max) {
+  let array = [];
+  for (let i = 0; i <= max; i++) {
+    array.push(i)
+    if (i % 5 === 0 && i % 3 === 0) {
+      array.splice(i,1,'Fizzbuzz')
+    } else if (i % 3 === 0) {
+      array.splice(i,1,'Fizz')
+    } else if (i % 5 && i % 3 !== 0) {
+      array.splice(i,1,'Buzz')
+    }
+  }
+  return array;
+}
+console.log(fizzBuzzPart2(100))
 
 /**
  * Takes in range (inclusive) and returns the sum of all numbers in that range.
@@ -283,14 +303,18 @@ function fizzBuzzPart2() {}
  * @param {number} max number
  * @returns {number} sum all all numbers from min to max
  */
+
 function rangeSum(max, min) {
-  num = [];
-  for (min = min; min <= max; min++){
-    num.push(min)
-  }
-  return num
+  let num = [];
+  for (let i = min; i <= max; i++) {
+    num.push(i)
+  }  
+  let numSum = num.reduce((acc, cVal) => {
+    return acc + cVal;
+  })
+  return numSum
 }
-console.log(rangeSum(10,1))
+
 /**
  * Takes in range (inclusive) and returns an array in decreasing order of all odd numbers
  * in that range
@@ -309,7 +333,14 @@ function rangeOdd() {}
  * @param {number} max number
  * @returns {number[]} includes every other element
  */
-function rangeEveryOther() {}
+function rangeEveryOther(max, min) {
+  array = [];
+  for (let i = min; i <= max; i+=2){
+    array.push(i)
+  }
+  return array
+}
+console.log(rangeEveryOther(10,1))
 
 /**
  * Takes in an array and a target.
@@ -320,7 +351,17 @@ function rangeEveryOther() {}
  * @param {number|string} target
  * @returns {boolean} true if the array contains our target, otherwise false
  */
-function containsWhileLoop() {}
+function containsWhileLoop(array, target) {
+  for (let i = 0; i < array.length; i++) {
+    while (array[i] === target) {
+      return true;
+    }
+    while (array[i] !== target) {
+      return false;
+    }
+  }
+}
+console.log(containsWhileLoop([1,2,5,8,6,2], 7))
 
 /**
  * Takes in an array and a target.
